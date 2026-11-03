@@ -381,3 +381,4 @@ export const MENU_ITEMS = [
     imageUrl: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&auto=format&fit=crop&q=80",
   }
 ];
+

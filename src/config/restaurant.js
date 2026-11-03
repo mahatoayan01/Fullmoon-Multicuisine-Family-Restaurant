@@ -113,3 +113,4 @@ export const RESTAURANT_CONFIG = {
     estimatedDeliveryMins: "30 - 45",
   },
 };
+

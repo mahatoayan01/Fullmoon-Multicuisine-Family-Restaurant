@@ -108,3 +108,4 @@ export default function DishCard({ dish }) {
     </div>
   );
 }
+

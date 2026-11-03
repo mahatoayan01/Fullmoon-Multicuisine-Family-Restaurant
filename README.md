@@ -231,3 +231,4 @@ Located in [`src/config/restaurant.js`](./src/config/restaurant.js):
 - `TODO_INSTAGRAM_HANDLE`: Update with the restaurant's claimed Instagram handle if they create a dedicated handle.
 - `TODO_OWNER_EMAIL_ADDRESS_info@fullmoonrestaurant.com`: Update with the owner's custom business email if desired.
 - `VITE_RAZORPAY_KEY_ID`: Replace `rzp_test_placeholder_key` with live or test merchant credentials.
+

@@ -350,3 +350,4 @@ export function resetDemoData() {
 }
 
 export { app, auth, db };
+
