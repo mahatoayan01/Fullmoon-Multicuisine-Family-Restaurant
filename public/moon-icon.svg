@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="46" fill="#0B0F19" stroke="#F59E0B" stroke-width="2" />
+  <!-- Glowing Full Moon -->
+  <circle cx="50" cy="50" r="28" fill="url(#moonGlow)" filter="url(#softGlow)" />
+  <!-- Subtle crater textures -->
+  <circle cx="42" cy="44" r="5" fill="#D97706" opacity="0.35" />
+  <circle cx="58" cy="52" r="7" fill="#D97706" opacity="0.3" />
+  <circle cx="48" cy="62" r="4" fill="#D97706" opacity="0.25" />
+</svg>

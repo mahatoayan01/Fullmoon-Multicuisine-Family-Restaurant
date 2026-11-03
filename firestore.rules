@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Owner check: Replace with your actual Firebase owner UID or email claim
+    // For email check, ensure request.auth.token.email matches your registered owner email
+    function isOwner() {
+      return isAuthenticated() && 
+        (request.auth.token.email == "owner@fullmoonrestaurant.com" || 
+         request.auth.token.role == "owner");
+    }
+
+    // Customer Orders:
+    // Anyone can create (submit an order from website)
+    // Only the owner can read all orders, update status, or delete orders
+    match /orders/{orderId} {
+      allow create: if true;
+      allow read, update, delete: if isOwner();
+    }
+
+    // Payments:
+    // Anyone can record their payment result
+    // Only the owner can view full payment records, reconcile, or update
+    match /payments/{paymentId} {
+      allow create: if true;
+      allow read, update, delete: if isOwner();
+    }
+
+    // Contact Messages:
+    // Anyone can send a message via the Contact Form
+    // Only the owner can read or delete messages
+    match /messages/{messageId} {
+      allow create: if true;
+      allow read, delete: if isOwner();
+    }
+
+    // Default deny for all other collections
+    match /{document=**} {
+      allow read, write: if isOwner();
+    }
+  }
+}
